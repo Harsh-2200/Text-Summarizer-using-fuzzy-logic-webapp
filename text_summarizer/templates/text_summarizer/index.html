@@ -71,27 +71,27 @@
     <div class="container">
         <!-- <br> -->
         {% if summarize_div %}
-        <center><h3 style="color: yellow;">A NLP algorithm (Text Ranking Algorithm) based web app for Text Summarization built using Django </h3></center>
+        <center><h3 style="color: yellow;">A NLP algorithm (Text Ranking Algorithm) based web app for Text Summarization built using Django s</h3></center>
         <br>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <form class="form_card" action="{% url 'index' %}" method="POST">
-                    <div class="bg"></div>
-                    {% csrf_token %}
-                    <input type="text" class="form-control" placeholder="Enter the website URL" name="url_link" id="url_link">
-                    {% if url_error == True %}
-                    <div class="form-control alert-danger" style="margin-top: 10px; background-color: #f8d7da !important;">
-                        <center><p style="color: red;"><b>Please enter a valid URL.</b></p></center>
-                    </div>
-                    {% endif %}
-                    <center><h3 style="margin: 10px 0 10px 0;">Or</h3></center>
-                    <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="10"></textarea>
-                    <br>
-                    <input type="text" name="num_lines" class="form-control" placeholder="Enter how many of lines of summary you need. (OPTIONAL)"><br>
-                    <center><button class="btn btn-info btn-block" type="submit" name="summarize">Summarize Text</button></center>
-                </form>
-            </div>
+                <div class="col-md-6">
+                    <form class="form_card" action="{% url 'index' %}" method="POST">
+                        <div class="bg"></div>
+                        {% csrf_token %}
+                        <input type="text" class="form-control" placeholder="Enter the website URL" name="url_link" id="url_link">
+                        {% if url_error == True %}
+                        <div class="form-control alert-danger" style="margin-top: 10px; background-color: #f8d7da !important;">
+                            <center><p style="color: red;"><b>Please enter a valid URL.</b></p></center>
+                        </div>
+                        {% endif %}
+                        <center><h3 style="margin: 10px 0 10px 0;">Or</h3></center>
+                        <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="10"></textarea>
+                        <br>
+                        <input type="text" name="num_lines" class="form-control" placeholder="Enter how many of lines of summary you need. (OPTIONAL)"><br>
+                        <center><button class="btn btn-info btn-block" type="submit" name="summarize">Summarize Text</button></center>
+                    </form>
+                </div>
             <div class="col-md-3"></div>
         </div>
         {% endif %}
