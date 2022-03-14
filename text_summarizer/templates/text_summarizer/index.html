@@ -1,58 +1,6 @@
 {% extends 'text_summarizer/main.html' %}
 {% block content %}
 
-    <style>
-        .card{
-            border: 1px solid black;
-        }
-        .form-control{
-            border: 1px solid black;
-        }
-        .sum_card {
-            position: relative;
-            z-index: 1;
-            background: transparent;
-            color: white;
-            padding: 10px 10px 10px 10px;
-            box-shadow: 0 0 5px white;
-        }
-
-        .form_card{
-            position: relative;
-            z-index: 1;
-            background: transparent;
-            color: white;
-        }
-
-        .form-control{
-            background-color: rgb(58, 58, 58);
-            opacity: 0.9;
-            color: black !important;
-            border: 0 !important;
-            box-shadow: 0 0 8px cyan;
-        }
-
-        .form-control:hover{
-            box-shadow: 0 0 15px cyan;
-        }
-
-        .sum_card .bg {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(43, 42, 42, 0.363);
-            opacity: 0.8;
-        }
-
-        @media(max-width: 767px) {
-            .sum_card{
-                margin-top: 20px;
-            }
-        }
-    </style>
 
 {% for message in messages %}
 {% if message.tags == 'error' %}
@@ -71,11 +19,11 @@
     <div class="container">
         <!-- <br> -->
         {% if summarize_div %}
-        <center><h3 style="color: yellow;">A NLP algorithm (Text Ranking Algorithm) based web app for Text Summarization built using Django s</h3></center>
-        <br>
+        <!-- <center><h3 style="color: yellow;">A NLP algorithm (Text Ranking Algorithm) based web app for Text Summarization built using Django</h3></center> -->
         <div class="row">
-            <div class="col-md-3"></div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
+                    <div class="text-recg" style="max-width: 450px; margin: auto;">
+                        <h3 class="text-center mb-4" style="color: #17a2b8;">Using Text Ranking Algorithm</h3>
                     <form class="form_card" action="{% url 'index' %}" method="POST">
                         <div class="bg"></div>
                         {% csrf_token %}
@@ -86,13 +34,33 @@
                         </div>
                         {% endif %}
                         <center><h3 style="margin: 10px 0 10px 0;">Or</h3></center>
-                        <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="10"></textarea>
+                        <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="8"></textarea>
                         <br>
                         <input type="text" name="num_lines" class="form-control" placeholder="Enter how many of lines of summary you need. (OPTIONAL)"><br>
                         <center><button class="btn btn-info btn-block" type="submit" name="summarize">Summarize Text</button></center>
                     </form>
                 </div>
-            <div class="col-md-3"></div>
+                </div>
+            <div class="col-lg-6">
+                <div class="text-recg" style="max-width: 450px; margin: auto;">
+                    <h3 class="text-center mb-4" style="color: #17a2b8;">Using Fuzzy Algorithm</h3>
+                    <form class="form_card" action="{% url 'index' %}" method="POST">
+                        <div class="bg"></div>
+                        {% csrf_token %}
+                        <input type="text" class="form-control" placeholder="Enter the website URL" name="url_link" id="url_link">
+                        {% if url_error == True %}
+                        <div class="form-control alert-danger" style="margin-top: 10px; background-color: #f8d7da !important;">
+                            <center><p style="color: red;"><b>Please enter a valid URL.</b></p></center>
+                        </div>
+                        {% endif %}
+                        <center><h3 style="margin: 10px 0 10px 0;">Or</h3></center>
+                        <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="8"></textarea>
+                        <br>
+                        <input type="text" name="num_lines" class="form-control" placeholder="Enter how many of lines of summary you need. (OPTIONAL)"><br>
+                        <center><button class="btn btn-info btn-block" type="submit" name="summarize">Summarize Text</button></center>
+                    </form>
+                </div>
+            </div>
         </div>
         {% endif %}
         {% if flag %}

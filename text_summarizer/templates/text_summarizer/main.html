@@ -10,43 +10,21 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+        <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
     </head>
 
-    <style>
-        html{
-            position: relative;
-            min-height: 100%;
-        }
-
-        body{
-            background: black url("{% static 'images/background.jpg' %}") no-repeat fixed;
-            background-size: cover;
-            margin: 0 0 100px;
-            padding: 25px;
-        }
-        footer {
-            background: transparent;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 75px;
-            width: 100%;
-            overflow: hidden;
-        }
-    </style>
 
     <body>
         {%  include 'text_summarizer/navbar.html' %}
-	<br><br>
+	<br>
               {% block content %}
               {% endblock %}
-          <footer>
+          <!-- <footer>
             <center><p style="color: white;font-size: 17px;font-weight: bold;">Made with <span style="color:red">&#10084;</span> by Team Meta</p></center>
             <center><p style="font-size: 22px; margin-top: -5px;">
                 <a href="https://www.github.com/Harsh-2200/SIH" target="_blank"><span style="color: white !important;" class="fa fa-github"></span></a>&nbsp;&nbsp;
                 
             </p></center>
-        </footer>      
+        </footer>       -->
     </body>
 </html>

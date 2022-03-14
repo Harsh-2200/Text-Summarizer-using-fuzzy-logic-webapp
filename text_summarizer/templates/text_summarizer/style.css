@@ -1,0 +1,72 @@
+/* html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    background: black url("{% static 'images/background.jpg' %}") no-repeat fixed;
+    background-size: cover;
+    margin: 0 0 100px;
+    padding: 25px;
+}
+footer {
+    background: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    overflow: hidden
+}
+
+
+.card{
+    border: 1px solid black;
+}
+.form-control{
+    border: 1px solid black;
+}
+.sum_card {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0 0 5px white;
+}
+
+.form_card{
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: white;
+}
+
+.form-control{
+    background-color: rgb(58, 58, 58);
+    opacity: 0.9;
+    color: black !important;
+    border: 0 !important;
+    box-shadow: 0 0 8px cyan;
+}
+
+.form-control:hover{
+    box-shadow: 0 0 15px cyan;
+}
+
+.sum_card .bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(43, 42, 42, 0.363);
+    opacity: 0.8;
+}
+
+@media(max-width: 767px) {
+    .sum_card{
+        margin-top: 20px;
+    }
+} */
