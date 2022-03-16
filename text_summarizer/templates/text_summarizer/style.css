@@ -62,7 +62,7 @@ footer {
     left: 0;
     right: 0;
     background-color: rgba(43, 42, 42, 0.363);
-    opacity: 0.8;
+    opacity: 0.8; 
 }
 
 @media(max-width: 767px) {
